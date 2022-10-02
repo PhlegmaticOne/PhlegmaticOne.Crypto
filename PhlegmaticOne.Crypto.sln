@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Core", "PhlegmaticOne.Crypto.Core\PhlegmaticOne.Crypto.Core.csproj", "{CB85135C-BCD3-4A2C-AA14-F64E29A37278}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Tests", "PhlegmaticOne.Crypto.Tests\PhlegmaticOne.Crypto.Tests.csproj", "{0F5E8BA5-BFD1-4C4B-9800-FE5C2649871D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.Core", "PhlegmaticOne.Crypto.ClassicCrypto.Core\PhlegmaticOne.Crypto.ClassicCrypto.Core.csproj", "{0F1D1200-D925-4A27-8666-4B1EFBA99306}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography", "PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj", "{BC3A2169-C6F3-4BB5-A6F9-405249987BC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare", "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj", "{A187D423-67EE-4859-ABCE-36704BB79084}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Polynomial", "PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj", "{73C8A234-4F11-469F-AB1F-6299E93BC7F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetry.CardanoGrid", "PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetry.CardanoGrid.csproj", "{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB85135C-BCD3-4A2C-AA14-F64E29A37278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB85135C-BCD3-4A2C-AA14-F64E29A37278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB85135C-BCD3-4A2C-AA14-F64E29A37278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB85135C-BCD3-4A2C-AA14-F64E29A37278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5E8BA5-BFD1-4C4B-9800-FE5C2649871D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5E8BA5-BFD1-4C4B-9800-FE5C2649871D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5E8BA5-BFD1-4C4B-9800-FE5C2649871D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5E8BA5-BFD1-4C4B-9800-FE5C2649871D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1D1200-D925-4A27-8666-4B1EFBA99306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1D1200-D925-4A27-8666-4B1EFBA99306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1D1200-D925-4A27-8666-4B1EFBA99306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1D1200-D925-4A27-8666-4B1EFBA99306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3A2169-C6F3-4BB5-A6F9-405249987BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3A2169-C6F3-4BB5-A6F9-405249987BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3A2169-C6F3-4BB5-A6F9-405249987BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3A2169-C6F3-4BB5-A6F9-405249987BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A187D423-67EE-4859-ABCE-36704BB79084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A187D423-67EE-4859-ABCE-36704BB79084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A187D423-67EE-4859-ABCE-36704BB79084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A187D423-67EE-4859-ABCE-36704BB79084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0908BD4-1269-4628-8238-4B210AAEE632}
+	EndGlobalSection
+EndGlobal
