@@ -1,6 +1,6 @@
 ﻿namespace PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Helpers;
 
-public static class MatrixHelpers
+internal static class MatrixHelpers
 {
     public static T[,] Rotate90Clockwise<T>(T[,] array)
     {

@@ -1,6 +1,6 @@
-﻿namespace PhlegmaticOne.Crypto.DigitalCryptography.Helpers;
+﻿namespace PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.Helpers;
 
-public static class MathHelper
+internal static class MathHelper
 {
     public static int TenInLow10Exponent(int value)
     {

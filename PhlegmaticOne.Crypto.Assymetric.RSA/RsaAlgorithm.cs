@@ -1,13 +1,16 @@
-﻿using PhlegmaticOne.Crypto.Assymetric.RSA.EncrypitionData;
-using PhlegmaticOne.Crypto.Core.Base;
-using System.Numerics;
+﻿using System.Numerics;
 using System.Text;
+using PhlegmaticOne.Crypto.Asymmetric.RSA.EncryptionData;
+using PhlegmaticOne.Crypto.Core.Base;
+using PhlegmaticOne.Crypto.Core.Models;
 
-namespace PhlegmaticOne.Crypto.Assymetric.RSA;
+namespace PhlegmaticOne.Crypto.Asymmetric.RSA;
 
-public class RsaAlgorithm : ICryptoAlgorithm<RsaEncryptionData>
+public class RsaAlgorithm : CryptoAlgorithmBase<RsaEncryptionData>
 {
-    public EncryptionResult<RsaEncryptionData> Encrypt(string textToEncrypt, RsaEncryptionData encryptionData)
+    public override string Description => "RSA asymmetric algorithm";
+
+    public override EncryptionResult<RsaEncryptionData> Encrypt(string textToEncrypt, RsaEncryptionData encryptionData)
     {
         var result = new StringBuilder();
         encryptionData.GenerateKeys();
@@ -25,17 +28,17 @@ public class RsaAlgorithm : ICryptoAlgorithm<RsaEncryptionData>
             result.Append(encrypted);
             result.Append(encryptionData.SeparatingChar);
         }
-
-        return new EncryptionResult<RsaEncryptionData>(encryptionData, textToEncrypt, result.ToString());
+        var encryptedText = result.ToString();
+        return new(encryptionData, textToEncrypt, encryptedText, Description);
     }
 
-    public DecryptionResult Decrypt(EncryptionResult<RsaEncryptionData> encryptionResult)
+    public override DecryptionResult Decrypt(EncryptionResult<RsaEncryptionData> encryptionResult)
     {
         var result = new StringBuilder();
-        var secretKey = encryptionResult.EncyptionData.SecretKey;
-        var alphabet = encryptionResult.EncyptionData.Alphabet;
+        var secretKey = encryptionResult.EncryptionData.SecretKey;
+        var alphabet = encryptionResult.EncryptionData.Alphabet;
         var encrypted = encryptionResult.EncryptedText
-            .Split(encryptionResult.EncyptionData.SeparatingChar, StringSplitOptions.RemoveEmptyEntries);
+            .Split(encryptionResult.EncryptionData.SeparatingChar, StringSplitOptions.RemoveEmptyEntries);
 
         foreach (var encryptedLetter in encrypted)
         {
@@ -51,6 +54,7 @@ public class RsaAlgorithm : ICryptoAlgorithm<RsaEncryptionData>
             result.Append(letter);
         }
 
-        return new(encryptionResult.OriginalText, result.ToString(), encryptionResult.EncryptedText);
+        var decrypted = result.ToString();
+        return DecryptionResult.FromEncryptionResult(encryptionResult, decrypted);
     }
 }

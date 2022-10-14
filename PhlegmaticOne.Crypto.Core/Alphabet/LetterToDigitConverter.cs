@@ -7,6 +7,13 @@ public class LetterToDigitConverter : ILetterToDigitConverter
     private readonly IDictionary<char, int> _lettersToDigit;
     public LetterToDigitConverter(IDictionary<char, int> lettersToDigit) => _lettersToDigit = lettersToDigit;
 
+    public static LetterToDigitConverter FromAlphabetString(string alphabetString)
+    {
+        var alphabet = alphabetString
+            .Select((x, i) => (x, i))
+            .ToDictionary(x => x.x, x => x.i);
+        return new LetterToDigitConverter(alphabet);
+    }
     public int Length => _lettersToDigit.Count;
 
     public bool Contains(char letter) => _lettersToDigit.ContainsKey(letter);

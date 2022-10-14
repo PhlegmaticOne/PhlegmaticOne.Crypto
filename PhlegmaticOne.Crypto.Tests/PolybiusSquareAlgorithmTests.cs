@@ -1,24 +1,21 @@
-﻿using PhlegmaticOne.Crypto.Core.Alphabet;
-using PhlegmaticOne.Crypto.DigitalCryptography.EncryptionData;
-using PhlegmaticOne.Crypto.DigitalCryptography.LettersEncryption;
-using PhlegmaticOne.Crypto.DigitalCryptography;
-using PhlegmaticOne.Crypto.PolybiusSquare.Alphabet;
-using PhlegmaticOne.Crypto.PolybiusSquare.EncryptionData;
-using PhlegmaticOne.Crypto.PolybiusSquare.LettersEncryption;
-using PhlegmaticOne.Crypto.PolybiusSquare;
+﻿using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.Alphabet;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.EncryptionData;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
+using PhlegmaticOne.Crypto.Core.Alphabet;
 
 namespace PhlegmaticOne.Crypto.Tests;
 
-public class PolybiusSquareTests
+public class PolybiusSquareAlgorithmTests
 {
-    private readonly PolibiusSquareAlgorithm _algorithm;
+    private readonly PolybiusSquareAlgorithm _algorithm;
     private readonly SquareAlphabet _squareAlphabet;
-    public PolybiusSquareTests()
+    public PolybiusSquareAlgorithmTests()
     {
         var alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя ";
 
         _squareAlphabet = SquareAlphabet.FromAlphabet(alphabet);
-        _algorithm = new PolibiusSquareAlgorithm();
+        _algorithm = new PolybiusSquareAlgorithm();
     }
 
     [Theory]
@@ -27,7 +24,7 @@ public class PolybiusSquareTests
     [InlineData("вааааааап фы фы ыфщлаффытщав  ыываыщаштфщзт ываываы")]
     [InlineData("кротов александр вячеславович")]
     [InlineData("большоесловобезпробелов")]
-    public void OneRowDowsPolicy_Enryption_Tests(string encrypting)
+    public void OneRowRowsPolicy_Encryption_Tests(string encrypting)
     {
         var letterEncryptionPolicy = new OneRowDownEncryptionPolicy(_squareAlphabet);
         var algorithmData = new PolybiusSquareEncryptionData(letterEncryptionPolicy);
@@ -44,9 +41,9 @@ public class PolybiusSquareTests
     [InlineData("вааааааап фы фы ыфщлаффытщав  ыываыщаштфщзт ываываы")]
     [InlineData("кротов александр вячеславович")]
     [InlineData("большоесловобезпробелов")]
-    public void ReadByRowsPolicy_Enryption_Tests(string encrypting)
+    public void ReadByRowsPolicy_Encryption_Tests(string encrypting)
     {
-        var letterEncryptionPolicy = new ReadPolibiusEncryptedDigitCodesByRowsLetterEncryptionPolicy(_squareAlphabet);
+        var letterEncryptionPolicy = new ReadPolybiusEncryptedDigitCodesByRowsLetterEncryptionPolicy(_squareAlphabet);
         var algorithmData = new PolybiusSquareEncryptionData(letterEncryptionPolicy);
 
         var encrypted = _algorithm.Encrypt(encrypting, algorithmData);

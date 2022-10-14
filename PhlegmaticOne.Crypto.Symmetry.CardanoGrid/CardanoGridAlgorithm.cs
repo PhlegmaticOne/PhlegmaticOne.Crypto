@@ -1,13 +1,16 @@
 ﻿using PhlegmaticOne.Crypto.Core.Base;
+using PhlegmaticOne.Crypto.Core.Models;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Grid;
 using System.Text;
 
 namespace PhlegmaticOne.Crypto.Symmetric.CardanoGrid;
 
-public class CardanoGridAlgorithm : ICryptoAlgorithm<CardanoGridAlgorithmEncryptionData>
+public class CardanoGridAlgorithm : CryptoAlgorithmBase<CardanoGridAlgorithmEncryptionData>
 {
-    public EncryptionResult<CardanoGridAlgorithmEncryptionData> Encrypt(string textToEncrypt,
+    public override string Description => "Cardano grid algorithm. (Решетка Кардано)";
+
+    public override EncryptionResult<CardanoGridAlgorithmEncryptionData> Encrypt(string textToEncrypt,
         CardanoGridAlgorithmEncryptionData encryptionData)
     {
         var textGrid = encryptionData.GenerateTextGrid(textToEncrypt);
@@ -22,19 +25,20 @@ public class CardanoGridAlgorithm : ICryptoAlgorithm<CardanoGridAlgorithmEncrypt
             }
         }
 
-        for (int i = 0; i < 4; i++)
+        for (var i = 0; i < 4; i++)
         {
             textGrid.ApplyMask(strings[i], mask);
             mask.Rotate90Clockwise();
         }
 
-        return new EncryptionResult<CardanoGridAlgorithmEncryptionData>(encryptionData, textToEncrypt, textGrid.ToView());
+        var encrypted = textGrid.ToView();
+        return new(encryptionData, textToEncrypt, encrypted, Description);
     }
-    public DecryptionResult Decrypt(EncryptionResult<CardanoGridAlgorithmEncryptionData> encryptionResult)
+    public override DecryptionResult Decrypt(EncryptionResult<CardanoGridAlgorithmEncryptionData> encryptionResult)
     {
         var original = encryptionResult.OriginalText;
-        var textGrid = encryptionResult.EncyptionData.TextGrid;
-        var mask = encryptionResult.EncyptionData.Mask;
+        var textGrid = encryptionResult.EncryptionData.TextGrid;
+        var mask = encryptionResult.EncryptionData.Mask;
 
         var countsToRead = original.Chunk(textGrid.KPow2).Select(x => x.Length).ToList();
         var sb = new StringBuilder();
@@ -45,6 +49,7 @@ public class CardanoGridAlgorithm : ICryptoAlgorithm<CardanoGridAlgorithmEncrypt
             sb.Append(read);
         }
 
-        return new(encryptionResult.OriginalText, sb.ToString(), encryptionResult.EncryptedText);
+        var decrypted = sb.ToString();
+        return DecryptionResult.FromEncryptionResult(encryptionResult, decrypted);
     }
 }

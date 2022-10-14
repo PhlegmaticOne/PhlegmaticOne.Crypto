@@ -1,4 +1,4 @@
-﻿namespace PhlegmaticOne.Crypto.Core.Extension;
+﻿namespace PhlegmaticOne.Crypto.ClassicCrypto.Core.Extension;
 
 public static class IntExtensions
 {

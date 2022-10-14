@@ -16,8 +16,7 @@ public class CardanoGridAlgorithmTest
     public void CardanoGrid_Test(string encrypting)
     {
         var alphabetString = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя ";
-        var alphabet = alphabetString.Select((x, i) => (x, i)).ToDictionary(x => x.x, x => x.i);
-        var letterToDigitConverter = new LetterToDigitConverter(alphabet);
+        var letterToDigitConverter = LetterToDigitConverter.FromAlphabetString(alphabetString);
         var maskGenerator = new RandomMaskGenerator();
         var algorithmData = new CardanoGridAlgorithmEncryptionData(maskGenerator, letterToDigitConverter);
         var algorithm = new CardanoGridAlgorithm();

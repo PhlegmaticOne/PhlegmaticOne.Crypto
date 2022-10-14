@@ -1,7 +1,7 @@
-﻿using PhlegmaticOne.Crypto.Core.Alphabet;
-using PhlegmaticOne.Crypto.DigitalCryptography;
-using PhlegmaticOne.Crypto.DigitalCryptography.EncryptionData;
-using PhlegmaticOne.Crypto.DigitalCryptography.LettersEncryption;
+﻿using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.EncryptionData;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.LettersEncryption;
+using PhlegmaticOne.Crypto.Core.Alphabet;
 
 namespace PhlegmaticOne.Crypto.Tests;
 

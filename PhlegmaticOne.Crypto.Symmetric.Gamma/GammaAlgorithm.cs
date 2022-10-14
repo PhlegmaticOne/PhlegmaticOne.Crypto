@@ -1,12 +1,15 @@
-﻿using PhlegmaticOne.Crypto.Core.Base;
+﻿using System.Text;
+using PhlegmaticOne.Crypto.Core.Base;
+using PhlegmaticOne.Crypto.Core.Models;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.EncryptionData;
-using System.Text;
 
-namespace PhlegmaticOne.Crypto.Gamma;
+namespace PhlegmaticOne.Crypto.Symmetric.Gamma;
 
-public class GammaAlgorithm : ICryptoAlgorithm<GammaAlgorithmEncryptionData>
+public class GammaAlgorithm : CryptoAlgorithmBase<GammaAlgorithmEncryptionData>
 {
-    public EncryptionResult<GammaAlgorithmEncryptionData> Encrypt(string textToEncrypt,
+    public override string Description => "Gamma algorithm. (Гаммирование)";
+
+    public override EncryptionResult<GammaAlgorithmEncryptionData> Encrypt(string textToEncrypt,
         GammaAlgorithmEncryptionData encryptionData)
     {
         var sb = new StringBuilder();
@@ -18,17 +21,17 @@ public class GammaAlgorithm : ICryptoAlgorithm<GammaAlgorithmEncryptionData>
             var codedLetter = encryptionData.Alphabet.ConvertDigit(codedLetterCode);
             sb.Append(codedLetter);
         }
-
-        return new EncryptionResult<GammaAlgorithmEncryptionData>(encryptionData, textToEncrypt, sb.ToString());
+        var encrypted = sb.ToString();
+        return new(encryptionData, textToEncrypt, encrypted, Description);
     }
 
-    public DecryptionResult Decrypt(EncryptionResult<GammaAlgorithmEncryptionData> encryptionResult)
+    public override DecryptionResult Decrypt(EncryptionResult<GammaAlgorithmEncryptionData> encryptionResult)
     {
         var sb = new StringBuilder();
         var textToDecrypt = encryptionResult.EncryptedText;
-        var keyUsed = encryptionResult.EncyptionData.Key;
-        var alphabet = encryptionResult.EncyptionData.Alphabet;
-        var mod = encryptionResult.EncyptionData.Mod;
+        var keyUsed = encryptionResult.EncryptionData.Key;
+        var alphabet = encryptionResult.EncryptionData.Alphabet;
+        var mod = encryptionResult.EncryptionData.Mod;
 
         foreach (var letterAndKey in textToDecrypt.Zip(keyUsed))
         {
@@ -38,7 +41,7 @@ public class GammaAlgorithm : ICryptoAlgorithm<GammaAlgorithmEncryptionData>
             var codedLetter = alphabet.ConvertDigit(codedLetterCode);
             sb.Append(codedLetter);
         }
-
-        return new(encryptionResult.OriginalText, sb.ToString(), textToDecrypt);
+        var decrypted = sb.ToString();
+        return DecryptionResult.FromEncryptionResult(encryptionResult, decrypted);
     }
 }

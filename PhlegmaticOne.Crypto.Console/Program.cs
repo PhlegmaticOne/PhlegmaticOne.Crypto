@@ -1,17 +1,17 @@
 ﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.EncryptionData;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.LettersEncryption;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.Alphabet;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.EncryptionData;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
 using PhlegmaticOne.Crypto.Core.Alphabet;
-using PhlegmaticOne.Crypto.Core.Base;
-using PhlegmaticOne.Crypto.DigitalCryptography;
-using PhlegmaticOne.Crypto.DigitalCryptography.EncryptionData;
-using PhlegmaticOne.Crypto.DigitalCryptography.LettersEncryption;
-using PhlegmaticOne.Crypto.Gamma;
-using PhlegmaticOne.Crypto.PolybiusSquare;
-using PhlegmaticOne.Crypto.PolybiusSquare.Alphabet;
-using PhlegmaticOne.Crypto.PolybiusSquare.EncryptionData;
-using PhlegmaticOne.Crypto.PolybiusSquare.LettersEncryption;
+using PhlegmaticOne.Crypto.Core.Models;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Masks;
+using PhlegmaticOne.Crypto.Symmetric.Gamma;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.KeyGenerators;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial;
@@ -114,7 +114,7 @@ static DecryptionResult PolybiusEncrypting(string textToEncrypt)
     var squareAlphabet = SquareAlphabet.FromAlphabet(alphabet);
     var letterEncryptionPolicy = new OneRowDownEncryptionPolicy(squareAlphabet);
 
-    var cryptoAlgorithm = new PolibiusSquareAlgorithm();
+    var cryptoAlgorithm = new PolybiusSquareAlgorithm();
 
     var encryptionData = new PolybiusSquareEncryptionData(letterEncryptionPolicy);
 

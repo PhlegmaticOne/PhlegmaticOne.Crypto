@@ -1,8 +1,8 @@
 ﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.Alphabet;
 using PhlegmaticOne.Crypto.Core.Helpers;
-using PhlegmaticOne.Crypto.PolybiusSquare.Alphabet;
 
-namespace PhlegmaticOne.Crypto.PolybiusSquare.LettersEncryption;
+namespace PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
 
 public class OneRowDownEncryptionPolicy : ILetterEncryptionPolicy
 {

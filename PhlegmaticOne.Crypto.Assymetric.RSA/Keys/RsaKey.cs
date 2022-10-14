@@ -1,9 +1,9 @@
-﻿namespace PhlegmaticOne.Crypto.Assymetric.RSA.Keys;
+﻿namespace PhlegmaticOne.Crypto.Asymmetric.RSA.Keys;
 
 public class RsaKey
 {
-    public long FirstMagicNumber { get; set; }
-    public long SecondMagicNumber { get; set; }
+    public long FirstMagicNumber { get; }
+    public long SecondMagicNumber { get; }
     public RsaKey(long firstMagicNumber, long secondMagicNumber)
     {
         FirstMagicNumber = firstMagicNumber;

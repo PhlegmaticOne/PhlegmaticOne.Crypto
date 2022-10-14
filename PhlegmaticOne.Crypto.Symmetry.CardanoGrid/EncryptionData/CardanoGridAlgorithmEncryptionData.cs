@@ -9,9 +9,8 @@ public class CardanoGridAlgorithmEncryptionData : IEncryptionData
 {
 	private readonly IMaskGenerator _maskGenerator;
 	private readonly ILetterToDigitConverter _alphabet;
-
-	public TextGrid TextGrid { get; set; }
-	public Mask Mask { get; private set; }
+    public TextGrid TextGrid { get; private set; } = null!;
+    public Mask Mask { get; private set; } = null!;
 	public CardanoGridAlgorithmEncryptionData(IMaskGenerator maskGenerator, ILetterToDigitConverter alphabet)
 	{
 		_maskGenerator = maskGenerator;

@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.CardanoGrid", "PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj", "{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Assymetric.RSA", "PhlegmaticOne.Crypto.Assymetric.RSA\PhlegmaticOne.Crypto.Assymetric.RSA.csproj", "{5EDEAC31-CDE6-4FFB-97A3-370928716175}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Asymmetric.RSA", "PhlegmaticOne.Crypto.Assymetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj", "{5EDEAC31-CDE6-4FFB-97A3-370928716175}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhlegmaticOne.Crypto.Console", "PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Console", "PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

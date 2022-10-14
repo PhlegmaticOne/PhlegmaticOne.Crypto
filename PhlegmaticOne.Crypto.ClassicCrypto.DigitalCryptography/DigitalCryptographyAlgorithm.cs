@@ -1,46 +1,44 @@
-﻿using PhlegmaticOne.Crypto.Core.Base;
+﻿using System.Text;
+using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.EncryptionData;
+using PhlegmaticOne.Crypto.Core.Base;
 using PhlegmaticOne.Crypto.Core.Helpers;
-using PhlegmaticOne.Crypto.DigitalCryptography.EncryptionData;
-using System.Text;
+using PhlegmaticOne.Crypto.Core.Models;
 
-namespace PhlegmaticOne.Crypto.DigitalCryptography;
+namespace PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography;
 
-public class DigitalCryptographyAlgorithm : ICryptoAlgorithm<DigitalAlgorithmData>
+public class DigitalCryptographyAlgorithm : CryptoAlgorithmBase<DigitalAlgorithmData>
 {
-    public EncryptionResult<DigitalAlgorithmData> Encrypt(string textToEncrypt, DigitalAlgorithmData encryptionData)
+    public override string Description => "Digital algorithm. (Цифровая система тайнописи)";
+
+    public override EncryptionResult<DigitalAlgorithmData> Encrypt(string textToEncrypt, DigitalAlgorithmData encryptionData)
     {
         var result = new StringBuilder();
         foreach (var letter in textToEncrypt)
         {
-            //Шифруем букву
-            var encrypted = encryptionData.LetterEncryptionPolicy.EncryptLetter(letter);
-            //Добавляем ее в зашифрованную строку
-            result.Append(encrypted);
-            //Если буква не пробел, то добавляем разделительный знак между зашифрованными буквами
+            var encryptedLetter = encryptionData.LetterEncryptionPolicy.EncryptLetter(letter);
+            result.Append(encryptedLetter);
             if (letter != CharConstants.SPACE)
             {
                 result.Append(encryptionData.SeparatingEncryptedLettersChar);
             }
         }
 
-        var enprypted = result.ToString();
-        return new EncryptionResult<DigitalAlgorithmData>(encryptionData, textToEncrypt, enprypted);
+        var encrypted = result.ToString();
+        return new(encryptionData, textToEncrypt, encrypted, Description);
     }
 
-    public DecryptionResult Decrypt(EncryptionResult<DigitalAlgorithmData> encryptionResult)
+    public override DecryptionResult Decrypt(EncryptionResult<DigitalAlgorithmData> encryptionResult)
     {
-        //Разбиваем зашифрованную строку на зашифрованные буквы
-        var splitted = encryptionResult.EncryptedText
-            .Split(encryptionResult.EncyptionData.SeparatingEncryptedLettersChar, CharConstants.SPACE);
+        var split = encryptionResult.EncryptedText
+            .Split(encryptionResult.EncryptionData.SeparatingEncryptedLettersChar, CharConstants.SPACE);
 
         var result = new StringBuilder();
-        foreach (var encrypted in splitted)
+        foreach (var encrypted in split)
         {
-            //Дешифруем каждую букву
-            result.Append(encryptionResult.EncyptionData.LetterEncryptionPolicy.DecryptLetter(encrypted));
+            result.Append(encryptionResult.EncryptionData.LetterEncryptionPolicy.DecryptLetter(encrypted));
         }
 
-        var decprypted = result.ToString().TrimEnd();
-        return new(encryptionResult.OriginalText, decprypted, encryptionResult.EncryptedText);
+        var decrypted = result.ToString().TrimEnd();
+        return DecryptionResult.FromEncryptionResult(encryptionResult, decrypted);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core;
 using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
 
-namespace PhlegmaticOne.Crypto.DigitalCryptography.EncryptionData;
+namespace PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.EncryptionData;
 
 public class DigitalAlgorithmData : ClassicCryptoEncryptionDataBase
 {

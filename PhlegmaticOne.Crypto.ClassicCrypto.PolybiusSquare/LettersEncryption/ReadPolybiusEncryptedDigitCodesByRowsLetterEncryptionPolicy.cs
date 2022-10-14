@@ -1,17 +1,17 @@
-﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
-using PhlegmaticOne.Crypto.Core.Extension;
-using PhlegmaticOne.Crypto.PolybiusSquare.Alphabet;
+﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core.Extension;
+using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
+using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.Alphabet;
 
-namespace PhlegmaticOne.Crypto.PolybiusSquare.LettersEncryption;
+namespace PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
 
-public class ReadPolibiusEncryptedDigitCodesByRowsLetterEncryptionPolicy : ILetterEncryptionPolicy
+public class ReadPolybiusEncryptedDigitCodesByRowsLetterEncryptionPolicy : ILetterEncryptionPolicy
 {
     private readonly List<(int, int)> _initialValues;
     private readonly List<(int, int)> _readValues;
     private readonly SquareAlphabet _squareAlphabet;
     private int _currentEncryptIndex;
     private int _currentDecryptIndex;
-    public ReadPolibiusEncryptedDigitCodesByRowsLetterEncryptionPolicy(SquareAlphabet squareAlphabet)
+    public ReadPolybiusEncryptedDigitCodesByRowsLetterEncryptionPolicy(SquareAlphabet squareAlphabet)
     {
         _readValues = new();
         _initialValues = new();
@@ -69,18 +69,13 @@ public class ReadPolibiusEncryptedDigitCodesByRowsLetterEncryptionPolicy : ILett
 
         FillValues(str, _initialValues);
     }
-    public void Clear()
-    {
-        _initialValues.Clear();
-        _readValues.Clear();
-    }
 
     private char[] GetStringLetterIndexes(string str)
     {
         var letterIndexes = str.SelectMany(x =>
         {
             var (row, col) = _squareAlphabet[x];
-            return col.ToString() + row.ToString();
+            return col + row.ToString();
         }).ToArray();
 
         return letterIndexes.ToArray();

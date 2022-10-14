@@ -1,14 +1,15 @@
-﻿using PhlegmaticOne.Crypto.Assymetric.RSA.Keys;
+﻿using PhlegmaticOne.Crypto.Asymmetric.RSA.Helpers;
+using PhlegmaticOne.Crypto.Asymmetric.RSA.Keys;
 using PhlegmaticOne.Crypto.Core.Alphabet;
 using PhlegmaticOne.Crypto.Core.Base;
 
-namespace PhlegmaticOne.Crypto.Assymetric.RSA.EncrypitionData;
+namespace PhlegmaticOne.Crypto.Asymmetric.RSA.EncryptionData;
 
 public class RsaEncryptionData : IEncryptionData
 {
 	private readonly List<int> _primes;
-	public RsaKey PublicKey { get; set; }
-	public RsaKey SecretKey { get; set; }
+    public RsaKey PublicKey { get; private set; } = null!;
+    public RsaKey SecretKey { get; private set; } = null!;
 	public ILetterToDigitConverter Alphabet { get; }
 	public char SeparatingChar { get; }
 
@@ -27,20 +28,20 @@ public class RsaEncryptionData : IEncryptionData
         long n = p * q;
 		long m = (p - 1) * (q - 1);
 
-		long d = GetD(m);
-		long e = GetE(d, m);
+		var d = GetD(m);
+		var e = GetE(d, m);
 
         PublicKey = new(e, n);
         SecretKey = new(d, n);
     }
 
-	private long GetD(long m)
+	private static long GetD(long m)
 	{
-		long d = Random.Shared.NextInt64(m / 2, m);
+		var d = Random.Shared.NextInt64(m / 2, m);
 
-		for (long i = d - 1; i >= 2; i--)
+		for (var i = d - 1; i >= 2; i--)
 		{
-			if(MathHelper.GCD(d, m) != 1)
+			if(MathHelper.Gcd(d, m) != 1)
 			{
 				d--;
 			}
@@ -53,7 +54,7 @@ public class RsaEncryptionData : IEncryptionData
 		return d;
     }
 
-    private long GetE(long d, long m)
+    private static long GetE(long d, long m)
     {
         long e = 10;
 

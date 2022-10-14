@@ -9,7 +9,7 @@ public class RandomMaskGenerator : IMaskGenerator
     {
         var result = new TextGridItem[textGrid.Rank, textGrid.Rank];
         var arr = textGrid.As1DArray();
-        for (int i = 0; i < textGrid.KPow2; i++)
+        for (var i = 0; i < textGrid.KPow2; i++)
         {
             var allByNumber = arr.Where(x => x.Number == i).ToList();
             var rnd = _random.Next(0, allByNumber.Count);
