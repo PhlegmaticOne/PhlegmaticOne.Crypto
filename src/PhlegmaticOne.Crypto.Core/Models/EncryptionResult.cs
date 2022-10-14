@@ -23,4 +23,6 @@ public class EncryptionResult
         EncryptedText = encryptedText;
         AlgorithmUsedDescription = new(algorithmUsedDescription, algorithmUsedType);
     }
+
+    public override string ToString() => EncryptedText;
 }

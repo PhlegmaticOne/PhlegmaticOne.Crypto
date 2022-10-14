@@ -35,4 +35,5 @@ public class LetterToDigitConverter : ILetterToDigitConverter
 
     public IEnumerator<KeyValuePair<char, int>> GetEnumerator() => _lettersToDigit.GetEnumerator();
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    public override string ToString() => $"Length: {Length}";
 }

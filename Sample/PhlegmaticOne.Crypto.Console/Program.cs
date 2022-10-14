@@ -1,23 +1,13 @@
 ﻿using PhlegmaticOne.Crypto.AlgorithmsExecution;
 using PhlegmaticOne.Crypto.Asymmetric.RSA;
-using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
 using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography;
-using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.EncryptionData;
-using PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.LettersEncryption;
 using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare;
 using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.Alphabet;
 using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.EncryptionData;
 using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
-using PhlegmaticOne.Crypto.Core.Alphabet;
-using PhlegmaticOne.Crypto.Core.Models;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid;
-using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.EncryptionData;
-using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Masks;
 using PhlegmaticOne.Crypto.Symmetric.Gamma;
-using PhlegmaticOne.Crypto.Symmetric.Gamma.EncryptionData;
-using PhlegmaticOne.Crypto.Symmetric.Gamma.KeyGenerators;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial;
-using PhlegmaticOne.Crypto.Symmetric.Polynomial.EncryptionData;
 
 //Dictionary<int, Func<string, DecryptionResult>> _actions = new()
 //{

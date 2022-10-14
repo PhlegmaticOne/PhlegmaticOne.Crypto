@@ -21,4 +21,6 @@ public class DecryptionResult
         string decryptedText) where T: IEncryptionData =>
         new(encryptionResult.OriginalText, encryptionResult.EncryptedText, decryptedText,
             encryptionResult.AlgorithmUsedDescription);
+
+    public override string ToString() => AlgorithmUsedDescription.ToString();
 }

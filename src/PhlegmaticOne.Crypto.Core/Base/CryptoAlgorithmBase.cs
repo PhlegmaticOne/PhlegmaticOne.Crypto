@@ -27,4 +27,5 @@ public abstract class CryptoAlgorithmBase<T> : ICryptoAlgorithm<T> where T : IEn
     }
     public abstract EncryptionResult<T> Encrypt(string textToEncrypt, T encryptionData);
     public abstract DecryptionResult Decrypt(EncryptionResult<T> encryptionResult);
+    public override string ToString() => Description;
 }

@@ -10,4 +10,6 @@ public class AlgorithmDescription
         Description = description;
         Type = type;
     }
+
+    public override string ToString() => $"Algorithm type: {Type.Name}";
 }
