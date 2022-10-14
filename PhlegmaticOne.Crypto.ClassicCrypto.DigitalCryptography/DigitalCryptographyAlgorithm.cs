@@ -12,8 +12,11 @@ public class DigitalCryptographyAlgorithm : ICryptoAlgorithm<DigitalAlgorithmDat
         var result = new StringBuilder();
         foreach (var letter in textToEncrypt)
         {
+            //Шифруем букву
             var encrypted = encryptionData.LetterEncryptionPolicy.EncryptLetter(letter);
+            //Добавляем ее в зашифрованную строку
             result.Append(encrypted);
+            //Если буква не пробел, то добавляем разделительный знак между зашифрованными буквами
             if (letter != CharConstants.SPACE)
             {
                 result.Append(encryptionData.SeparatingEncryptedLettersChar);
@@ -26,12 +29,14 @@ public class DigitalCryptographyAlgorithm : ICryptoAlgorithm<DigitalAlgorithmDat
 
     public DecryptionResult Decrypt(EncryptionResult<DigitalAlgorithmData> encryptionResult)
     {
+        //Разбиваем зашифрованную строку на зашифрованные буквы
         var splitted = encryptionResult.EncryptedText
             .Split(encryptionResult.EncyptionData.SeparatingEncryptedLettersChar, CharConstants.SPACE);
 
         var result = new StringBuilder();
         foreach (var encrypted in splitted)
         {
+            //Дешифруем каждую букву
             result.Append(encryptionResult.EncyptionData.LetterEncryptionPolicy.DecryptLetter(encrypted));
         }
 

@@ -13,11 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Classi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare", "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj", "{A187D423-67EE-4859-ABCE-36704BB79084}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Polynomial", "PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj", "{73C8A234-4F11-469F-AB1F-6299E93BC7F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetry.CardanoGrid", "PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetry.CardanoGrid.csproj", "{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.CardanoGrid", "PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj", "{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Assymetric.RSA", "PhlegmaticOne.Crypto.Assymetric.RSA\PhlegmaticOne.Crypto.Assymetric.RSA.csproj", "{5EDEAC31-CDE6-4FFB-97A3-370928716175}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhlegmaticOne.Crypto.Console", "PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +49,6 @@ Global
 		{A187D423-67EE-4859-ABCE-36704BB79084}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A187D423-67EE-4859-ABCE-36704BB79084}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A187D423-67EE-4859-ABCE-36704BB79084}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75BC74DA-FF7B-4574-9C9F-2CD9C7C6C03E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73C8A234-4F11-469F-AB1F-6299E93BC7F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +57,18 @@ Global
 		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CD3ECFF-BF4B-41E8-8434-5586272F5C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EDEAC31-CDE6-4FFB-97A3-370928716175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EDEAC31-CDE6-4FFB-97A3-370928716175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EDEAC31-CDE6-4FFB-97A3-370928716175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EDEAC31-CDE6-4FFB-97A3-370928716175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98470EE3-A4D3-4D10-A2FC-916AD1F7900F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

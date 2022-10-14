@@ -1,4 +1,6 @@
-﻿using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
+﻿using PhlegmaticOne.Crypto.Assymetric.RSA;
+using PhlegmaticOne.Crypto.Assymetric.RSA.EncrypitionData;
+using PhlegmaticOne.Crypto.ClassicCrypto.Core.LettersEncyption;
 using PhlegmaticOne.Crypto.Core.Alphabet;
 using PhlegmaticOne.Crypto.Core.Base;
 using PhlegmaticOne.Crypto.DigitalCryptography;
@@ -9,13 +11,14 @@ using PhlegmaticOne.Crypto.PolybiusSquare;
 using PhlegmaticOne.Crypto.PolybiusSquare.Alphabet;
 using PhlegmaticOne.Crypto.PolybiusSquare.EncryptionData;
 using PhlegmaticOne.Crypto.PolybiusSquare.LettersEncryption;
+using PhlegmaticOne.Crypto.Symmetric.CardanoGrid;
+using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.EncryptionData;
+using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Grid;
+using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Masks;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.KeyGenerators;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial.EncryptionData;
-using PhlegmaticOne.Crypto.Symmetry.CardanoGrid;
-using PhlegmaticOne.Crypto.Symmetry.CardanoGrid.EncryptionData;
-using PhlegmaticOne.Crypto.Symmetry.CardanoGrid.Grid;
 
 namespace PhlegmaticOne.Crypto.Tests;
 
@@ -79,7 +82,7 @@ public class CryptoTests
     [Fact]
     public void PolibiusSquareAlgorithm_Test()
     {
-        var alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя";
+        var alphabet = "абвгдежзийклмнопрстуфхцчшщъыьэюя ";
         var squareAlphabet = SquareAlphabet.FromAlphabet(alphabet);
         var letterEncryptionPolicy = new OneRowDownEncryptionPolicy(squareAlphabet);
 
@@ -118,7 +121,7 @@ public class CryptoTests
     [Fact]
     public void GammaAlgorithm_Test()
     {
-        var alphabetString = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        var alphabetString = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя ";
         var alphabet = alphabetString.Select((x, i) => (x, i)).ToDictionary(x => x.x, x => x.i);
         var letterToDigitConverter = new LetterToDigitConverter(alphabet);
         var keyGenerator = new RandomKeyGenerator();
@@ -158,18 +161,36 @@ public class CryptoTests
     [Fact]
     public void CardanoGridAlgorithm_Test()
     {
-        var indexesToSelect = new List<int> { 0, 1, 2, 7, 10, 11, 19, 20, 21, 22, 32, 39 };
-        var textGrid = new TextGrid(indexesToSelect);
-        var encryptionData = new CardanoGridAlgorithmEncryptionData(textGrid);
-        var cryptoAlgorithm = new CardanoGridAlgorithm();
+        var alphabetString = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя ";
+        var alphabet = alphabetString.Select((x, i) => (x, i)).ToDictionary(x => x.x, x => x.i);
+        var letterToDigitConverter = new LetterToDigitConverter(alphabet);
+        var maskGenerator = new RandomMaskGenerator();
+        var encryptionData = new CardanoGridAlgorithmEncryptionData(maskGenerator, letterToDigitConverter);
+        var algorithm = new CardanoGridAlgorithm();
 
-        var expected = "криптография";
-        var testString = "криво, повторяясь, граф разговаривал с яблоней";
+        var str = "кротов александр вячеславович";
+        var encrypted = algorithm.Encrypt(str, encryptionData);
+        var decrypted = algorithm.Decrypt(encrypted);
 
-        var encrypted = cryptoAlgorithm.Encrypt(testString, encryptionData);
+        Assert.Equal(str, decrypted.DecryptedText);
+    }
 
-        var decrypted = cryptoAlgorithm.Decrypt(encrypted);
+    [Fact]
+    public void GeneratePrimes_Test()
+    {
+        var alphabetString = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя ";
+        var alphabet = alphabetString.Select((x, i) => (x, i)).ToDictionary(x => x.x, x => x.i);
+        var letterToDigitConverter = new LetterToDigitConverter(alphabet);
 
-        Assert.Equal(expected, decrypted.DecryptedText);
+        var encryptionData = new RsaEncryptionData(letterToDigitConverter, 500, ' ');
+        var algorithm = new RsaAlgorithm();
+
+        var testString = "кротов александр вячеславович";
+
+        var encrypted = algorithm.Encrypt(testString, encryptionData);
+
+        var decrypted = algorithm.Decrypt(encrypted);
+
+        Assert.Equal(testString, decrypted.DecryptedText);
     }
 }

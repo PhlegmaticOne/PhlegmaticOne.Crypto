@@ -9,12 +9,13 @@ public class SquareAlphabet
     {
         var alphabetRank = (int)Math.Ceiling(Math.Sqrt(alphabet.Length));
         var matrix = new char[alphabetRank, alphabetRank];
+        var fillNum = 0;
         for (int i = 0; i < alphabetRank; i++)
         {
             for (int j = 0; j < alphabetRank; j++)
             {
                 var index = i * alphabetRank + j;
-                matrix[i, j] = index < alphabet.Length ? alphabet[index] : ' ';
+                matrix[i, j] = index < alphabet.Length ? alphabet[index] : (char)(fillNum++);
             }
         }
         return new(matrix);
