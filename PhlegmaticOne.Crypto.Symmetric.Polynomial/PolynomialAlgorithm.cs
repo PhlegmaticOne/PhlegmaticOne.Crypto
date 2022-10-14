@@ -21,7 +21,7 @@ public class PolynomialAlgorithm : CryptoAlgorithmBase<PolynomialAlgorithmEncryp
         }
 
         var encrypted = sb.ToString();
-        return new(encryptionData, textToEncrypt, encrypted, Description);
+        return new(encryptionData, textToEncrypt, encrypted, Description, GetType());
     }
     public override DecryptionResult Decrypt(EncryptionResult<PolynomialAlgorithmEncryptionData> encryptionResult)
     {

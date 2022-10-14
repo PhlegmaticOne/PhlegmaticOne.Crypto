@@ -7,9 +7,9 @@ public class DecryptionResult
     public string OriginalText { get; init; }
     public string EncryptedText { get; init; }
     public string DecryptedText { get; init; }
-    public string AlgorithmUsedDescription { get; init; }
+    public AlgorithmDescription AlgorithmUsedDescription { get; init; }
     public DecryptionResult(string originalText, string encryptedText,
-        string decryptedText,  string algorithmUsedDescription)
+        string decryptedText, AlgorithmDescription algorithmUsedDescription)
     {
         OriginalText = originalText;
         DecryptedText = decryptedText;

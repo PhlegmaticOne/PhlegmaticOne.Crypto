@@ -11,6 +11,6 @@ public interface ICryptoAlgorithm<T> : ICryptoAlgorithm where T : IEncryptionDat
 public interface ICryptoAlgorithm
 {
     string Description { get; }
-    object Encrypt(string textToEncrypt, object encryptionData);
-    DecryptionResult Decrypt(object encryptionData);
+    EncryptionResult Encrypt(string textToEncrypt, IEncryptionData encryptionData);
+    DecryptionResult Decrypt(EncryptionResult encryptionData);
 }

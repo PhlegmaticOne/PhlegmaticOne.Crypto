@@ -6,7 +6,7 @@ public abstract class CryptoAlgorithmBase<T> : ICryptoAlgorithm<T> where T : IEn
 {
     public abstract string Description { get; }
 
-    public object Encrypt(string textToEncrypt, object encryptionData)
+    public EncryptionResult Encrypt(string textToEncrypt, IEncryptionData encryptionData)
     {
         if (encryptionData is T genericEncryptionData)
         {
@@ -16,7 +16,7 @@ public abstract class CryptoAlgorithmBase<T> : ICryptoAlgorithm<T> where T : IEn
         throw new ArgumentException("Encryption data doesn't fit to encryption algorithm", nameof(encryptionData));
     }
 
-    public DecryptionResult Decrypt(object encryptionResult)
+    public DecryptionResult Decrypt(EncryptionResult encryptionResult)
     {
         if (encryptionResult is EncryptionResult<T> genericEncryptionResult)
         {

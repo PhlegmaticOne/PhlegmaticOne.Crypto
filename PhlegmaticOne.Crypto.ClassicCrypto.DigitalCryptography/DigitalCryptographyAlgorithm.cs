@@ -24,7 +24,7 @@ public class DigitalCryptographyAlgorithm : CryptoAlgorithmBase<DigitalAlgorithm
         }
 
         var encrypted = result.ToString();
-        return new(encryptionData, textToEncrypt, encrypted, Description);
+        return new(encryptionData, textToEncrypt, encrypted, Description, GetType());
     }
 
     public override DecryptionResult Decrypt(EncryptionResult<DigitalAlgorithmData> encryptionResult)

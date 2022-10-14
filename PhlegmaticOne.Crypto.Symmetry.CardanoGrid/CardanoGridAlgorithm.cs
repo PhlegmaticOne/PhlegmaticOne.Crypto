@@ -32,7 +32,7 @@ public class CardanoGridAlgorithm : CryptoAlgorithmBase<CardanoGridAlgorithmEncr
         }
 
         var encrypted = textGrid.ToView();
-        return new(encryptionData, textToEncrypt, encrypted, Description);
+        return new(encryptionData, textToEncrypt, encrypted, Description, GetType());
     }
     public override DecryptionResult Decrypt(EncryptionResult<CardanoGridAlgorithmEncryptionData> encryptionResult)
     {

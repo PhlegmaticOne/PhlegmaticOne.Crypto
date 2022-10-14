@@ -15,7 +15,7 @@ public class PolybiusSquareAlgorithm : CryptoAlgorithmBase<PolybiusSquareEncrypt
 
         var encrypted = new string(textToEncrypt.SelectMany(letterEncryptionPolicy.EncryptLetter).ToArray());
 
-        return new(encryptionData, textToEncrypt, encrypted, Description);
+        return new(encryptionData, textToEncrypt, encrypted, Description, GetType());
     }
 
     public override DecryptionResult Decrypt(EncryptionResult<PolybiusSquareEncryptionData> encryptionResult)

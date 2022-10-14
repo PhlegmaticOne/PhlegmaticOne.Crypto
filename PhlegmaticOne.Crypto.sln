@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Console", "PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhlegmaticOne.Crypto.AlgorithmsExecution", "PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj", "{6C8B94D3-54CA-4806-A5F4-CDFAD8993693}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A893DB-106D-4B52-9DA9-83D40E6B0C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C8B94D3-54CA-4806-A5F4-CDFAD8993693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C8B94D3-54CA-4806-A5F4-CDFAD8993693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C8B94D3-54CA-4806-A5F4-CDFAD8993693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C8B94D3-54CA-4806-A5F4-CDFAD8993693}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -29,7 +29,7 @@ public class RsaAlgorithm : CryptoAlgorithmBase<RsaEncryptionData>
             result.Append(encryptionData.SeparatingChar);
         }
         var encryptedText = result.ToString();
-        return new(encryptionData, textToEncrypt, encryptedText, Description);
+        return new(encryptionData, textToEncrypt, encryptedText, Description, GetType());
     }
 
     public override DecryptionResult Decrypt(EncryptionResult<RsaEncryptionData> encryptionResult)

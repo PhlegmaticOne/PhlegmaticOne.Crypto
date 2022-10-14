@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj" />
+    <ProjectReference Include="..\PhlegmaticOne.Crypto.Assymetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj" />
     <ProjectReference Include="..\PhlegmaticOne.Crypto.ClassicCrypto.Core\PhlegmaticOne.Crypto.ClassicCrypto.Core.csproj" />
     <ProjectReference Include="..\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj" />
     <ProjectReference Include="..\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj" />

@@ -22,7 +22,7 @@ public class GammaAlgorithm : CryptoAlgorithmBase<GammaAlgorithmEncryptionData>
             sb.Append(codedLetter);
         }
         var encrypted = sb.ToString();
-        return new(encryptionData, textToEncrypt, encrypted, Description);
+        return new(encryptionData, textToEncrypt, encrypted, Description, GetType());
     }
 
     public override DecryptionResult Decrypt(EncryptionResult<GammaAlgorithmEncryptionData> encryptionResult)
