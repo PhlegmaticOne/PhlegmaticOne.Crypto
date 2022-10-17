@@ -18,6 +18,34 @@ public static class BitArrayExtensions
         return new(result);
     }
 
+    public static BitArray ImmutableOr(this BitArray a, BitArray b)
+    {
+        if (a.Length != b.Length)
+        {
+            throw new ArgumentException("Microsoft sucks with modifying bitarrays in logical operations");
+        }
+        var result = new bool[a.Length];
+        for (int i = 0; i < a.Length; i++)
+        {
+            result[i] = a[i] | b[i];
+        }
+        return new(result);
+    }
+
+    public static BitArray ImmutableAnd(this BitArray a, BitArray b)
+    {
+        if (a.Length != b.Length)
+        {
+            throw new ArgumentException("Microsoft sucks with modifying bitarrays in logical operations");
+        }
+        var result = new bool[a.Length];
+        for (int i = 0; i < a.Length; i++)
+        {
+            result[i] = a[i] & b[i];
+        }
+        return new(result);
+    }
+
     public static byte[] ToByteArray(this BitArray bitArray)
     {
         var result = new byte[(bitArray.Length - 1) / 8 + 1];

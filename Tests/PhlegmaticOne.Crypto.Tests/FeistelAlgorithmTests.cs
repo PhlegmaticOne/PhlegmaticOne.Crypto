@@ -23,8 +23,8 @@ public class FeistelAlgorithmTests
     }
 
     [Theory]
-    [InlineData("криптографический")]
-    [InlineData("ъъъъъьъъьььььььъьъъьъьъъъъъььь")]
+    [InlineData("стар")]
+    [InlineData("кротов")]
     [InlineData("я л ю б л ю п р о б е л ы")]
     [InlineData("кротов александр вячеславович")]
     [InlineData("ыалтыщпш гфтыпфцузпатфц уацзп фыдалтфыфаыафшщцша")]

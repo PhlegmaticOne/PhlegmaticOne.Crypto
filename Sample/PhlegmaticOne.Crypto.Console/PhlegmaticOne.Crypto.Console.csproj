@@ -12,6 +12,7 @@
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Asymmetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj" />
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj" />
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj" />
+    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.csproj" />
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj" />
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj" />
     <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj" />

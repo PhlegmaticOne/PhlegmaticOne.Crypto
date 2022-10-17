@@ -29,7 +29,7 @@ public class FeistelAlgorithmData : IEncryptionData
 
 	public int TotalRounds { get; }
 	public int BlockSizeInBits { get; }
-    public FeistelKey CurrentFeistelKey { get; private set; } = null!;
+    public FeistelKey? CurrentFeistelKey { get; private set; }
 
 	public FeistelKey GenerateRoundKey(int round)
 	{
@@ -39,7 +39,7 @@ public class FeistelAlgorithmData : IEncryptionData
 			return CurrentFeistelKey;
 		}
 
-		CurrentFeistelKey = _roundKeyGenerator.ChangeKey(CurrentFeistelKey, round);
+		CurrentFeistelKey = _roundKeyGenerator.ChangeKey(CurrentFeistelKey!, round);
         return CurrentFeistelKey;
 	}
 	public BitArray ApplyFunction(BitArray enterBlock, FeistelKey feistelKey)
@@ -47,12 +47,8 @@ public class FeistelAlgorithmData : IEncryptionData
 		return _feistelFunction.F(enterBlock, feistelKey);
 	}
 	public BitArray ApplyPostFunctions(BitArray inputBlock)
-	{
-		var result = inputBlock;
-		foreach (var func in _postFeistelFunctions)
-		{
-			result = func.Process(result);
-		}
-		return result;
-	}
+    {
+        return _postFeistelFunctions.Aggregate(inputBlock,
+            (current, func) => func.Process(current));
+    }
 }
