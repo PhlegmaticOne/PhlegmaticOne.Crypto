@@ -12,7 +12,7 @@ public class EncryptionResult<T> : EncryptionResult where T : IEncryptionData
     }
 }
 
-public class EncryptionResult
+public abstract class EncryptionResult
 {
     public string OriginalText { get; }
     public string EncryptedText { get; }
@@ -23,6 +23,20 @@ public class EncryptionResult
         EncryptedText = encryptedText;
         AlgorithmUsedDescription = new(algorithmUsedDescription, algorithmUsedType);
     }
-
+    public bool TryGetEncryptionData<T>(out T? data) where T : IEncryptionData
+    {
+        data = default;
+        if(this is EncryptionResult<T> generic)
+        {
+            data = generic.EncryptionData;
+            return true;
+        }
+        return false;
+    }
+    public IEncryptionData GetCommonEncryptionData()
+    {
+        var dataProperty = GetType().GetProperty("EncryptionData")!;
+        return (IEncryptionData)dataProperty.GetValue(this)!;
+    }
     public override string ToString() => EncryptedText;
 }

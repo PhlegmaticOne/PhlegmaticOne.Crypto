@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{FA36AC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Console", "Sample\PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{FC385E12-2E09-4C4B-A233-1646D082CEB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhlegmaticOne.Crypto.Symmetric.Feistel", "src\PhlegmaticOne.Crypto.Symmetric.Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.csproj", "{3A05F199-E105-4CD2-94FF-598CFF1C05BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{122118AF-E505-4A9C-9109-9193D1E618D5} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
 		{BB999707-CA9E-4342-8112-6BA0942C45B1} = {E5A3EFB5-B9F6-445E-A6E2-8EBCB2100B9F}
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6} = {FA36ACD3-9D50-434F-877F-61C9091CFE25}
+		{3A05F199-E105-4CD2-94FF-598CFF1C05BC} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0908BD4-1269-4628-8238-4B210AAEE632}

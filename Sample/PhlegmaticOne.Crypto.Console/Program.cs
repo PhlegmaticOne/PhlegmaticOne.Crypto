@@ -8,6 +8,8 @@ using PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.LettersEncryption;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid;
 using PhlegmaticOne.Crypto.Symmetric.Gamma;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial;
+using System.Collections;
+using System.Text;
 
 //Dictionary<int, Func<string, DecryptionResult>> _actions = new()
 //{
@@ -164,25 +166,40 @@ using PhlegmaticOne.Crypto.Symmetric.Polynomial;
 //    return decrypted;
 //}
 
-var algorithmTypes = new List<Type>
+//var algorithmTypes = new List<Type>
+//{
+//    typeof(RsaAlgorithm),
+//    typeof(DigitalCryptographyAlgorithm),
+//    typeof(PolybiusSquareAlgorithm),
+//    typeof(CardanoGridAlgorithm),
+//    typeof(GammaAlgorithm),
+//    typeof(PolynomialAlgorithm)
+//};
+
+//var algorithmsExecutor = new ConfiguringCryptoAlgorithmsExecutor(algorithmTypes);
+
+
+//var squareAlphabet = SquareAlphabet.FromAlphabet("абвгдежзийклмнопрстуфхцчшщъыьэюя ");
+//var encryptionPolicy = new OneRowDownEncryptionPolicy(squareAlphabet);
+//var algorithmData = new PolybiusSquareEncryptionData(encryptionPolicy);
+
+//var encrypted = algorithmsExecutor.Encrypt("диспетчер", algorithmData);
+
+//var decrypted = algorithmsExecutor.Decrypt(encrypted);
+
+//Console.WriteLine(decrypted);
+
+
+var str = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя ,.-";
+
+
+var coded = Encoding.Unicode.GetBytes(str)
+    .Chunk(8)
+    .Select(x => new BitArray(x));
+
+foreach (var bitArray in coded)
 {
-    typeof(RsaAlgorithm),
-    typeof(DigitalCryptographyAlgorithm),
-    typeof(PolybiusSquareAlgorithm),
-    typeof(CardanoGridAlgorithm),
-    typeof(GammaAlgorithm),
-    typeof(PolynomialAlgorithm)
-};
-
-var algorithmsExecutor = new ConfiguringCryptoAlgorithmsExecutor(algorithmTypes);
+    Console.WriteLine(bitArray);
+}
 
 
-var squareAlphabet = SquareAlphabet.FromAlphabet("абвгдежзийклмнопрстуфхцчшщъыьэюя ");
-var encryptionPolicy = new OneRowDownEncryptionPolicy(squareAlphabet);
-var algorithmData = new PolybiusSquareEncryptionData(encryptionPolicy);
-
-var encrypted = algorithmsExecutor.Encrypt("диспетчер", algorithmData);
-
-var decrypted = algorithmsExecutor.Decrypt(encrypted);
-
-Console.WriteLine(decrypted);
