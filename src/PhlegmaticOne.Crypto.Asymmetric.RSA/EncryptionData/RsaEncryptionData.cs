@@ -28,14 +28,14 @@ public class RsaEncryptionData : IEncryptionData
         long n = p * q;
 		long m = (p - 1) * (q - 1);
 
-		var d = GetD(m);
-		var e = GetE(d, m);
+		var e = GetE(m);
+		var d = GetD(e, m);
 
         PublicKey = new(e, n);
         SecretKey = new(d, n);
     }
 
-	private static long GetD(long m)
+	private static long GetE(long m)
 	{
 		var d = Random.Shared.NextInt64(m / 2, m);
 
@@ -54,16 +54,18 @@ public class RsaEncryptionData : IEncryptionData
 		return d;
     }
 
-    private static long GetE(long d, long m)
+    private static long GetD(long d, long m)
     {
         long e = 10;
 
         while (true)
         {
             if ((e * d) % m == 1)
+            {
                 break;
-            else
-                e++;
+            }
+
+            e++;
         }
 
         return e;

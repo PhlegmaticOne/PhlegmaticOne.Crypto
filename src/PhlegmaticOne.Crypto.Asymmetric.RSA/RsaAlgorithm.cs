@@ -21,9 +21,8 @@ public class RsaAlgorithm : CryptoAlgorithmBase<RsaEncryptionData>
         {
             var letterCode = encryptionData.Alphabet.ConvertLetter(letter);
 
-            var b = BigInteger.Pow(letterCode, (int)publicKey.FirstMagicNumber);
-
-            var encrypted = b % publicKey.SecondMagicNumber;
+            var encrypted =
+                BigInteger.Pow(letterCode, (int)publicKey.FirstMagicNumber) % publicKey.SecondMagicNumber;
 
             result.Append(encrypted);
             result.Append(encryptionData.SeparatingChar);
@@ -43,9 +42,9 @@ public class RsaAlgorithm : CryptoAlgorithmBase<RsaEncryptionData>
         foreach (var encryptedLetter in encrypted)
         {
             var encryptedLetterCode = new BigInteger(Convert.ToDouble(encryptedLetter));
-            var temp = BigInteger.Pow(encryptedLetterCode, (int)secretKey.FirstMagicNumber);
 
-            var decodedLetterCode = temp % secretKey.SecondMagicNumber;
+            var decodedLetterCode =
+                BigInteger.Pow(encryptedLetterCode, (int)secretKey.FirstMagicNumber) % secretKey.SecondMagicNumber;
 
             var index = Convert.ToInt32(decodedLetterCode.ToString());
 

@@ -4,11 +4,11 @@ using PhlegmaticOne.Crypto.Core.Models;
 
 namespace PhlegmaticOne.Crypto.AlgorithmsExecution;
 
-public class ConfiguringCryptoAlgorithmsExecutor : ICryptoAlgorithmsExecutor
+public class ConfiguringTypesCryptoAlgorithmsExecutor : ICryptoAlgorithmsExecutor
 {
     private readonly List<Type> _cryptoAlgorithmsTypes;
 
-    public ConfiguringCryptoAlgorithmsExecutor(IEnumerable<Type> cryptoAlgorithmsTypes)
+    public ConfiguringTypesCryptoAlgorithmsExecutor(IEnumerable<Type> cryptoAlgorithmsTypes)
     {
         _cryptoAlgorithmsTypes = cryptoAlgorithmsTypes.ToList();
     }

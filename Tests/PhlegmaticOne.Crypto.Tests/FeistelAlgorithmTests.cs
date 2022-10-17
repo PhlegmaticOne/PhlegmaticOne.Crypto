@@ -13,7 +13,7 @@ public class FeistelAlgorithmTests
     {
         var keyGenerator = new RandomInitialKeyGenerator();
         var roundKeyGenerator = new ShiftRoundKeyGenerator();
-        var function = new XorFeistelFunction();
+        var function = new OrFeistelFunction();
         var postFunction = new PBoxFunction();
         _algorithmData = new FeistelAlgorithmData(keyGenerator, 
             roundKeyGenerator, function, 
