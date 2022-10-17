@@ -8,7 +8,7 @@ namespace PhlegmaticOne.Crypto.Asymmetric.RSA;
 
 public class RsaAlgorithm : CryptoAlgorithmBase<RsaEncryptionData>
 {
-    public override string Description => "RSA asymmetric algorithm";
+    public override string Description => "RSA asymmetric algorithm. (RSA-алгоритм)";
 
     public override EncryptionResult<RsaEncryptionData> Encrypt(string textToEncrypt, RsaEncryptionData encryptionData)
     {
