@@ -17,10 +17,13 @@ using PhlegmaticOne.Crypto.Symmetric.Polynomial;
 using PhlegmaticOne.Crypto.Core.Base;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.CardanoGrid.Masks;
-using PhlegmaticOne.Crypto.Symmetric.Feistel;
-using PhlegmaticOne.Crypto.Symmetric.Feistel.EncryptionData;
-using PhlegmaticOne.Crypto.Symmetric.Feistel.Functions;
-using PhlegmaticOne.Crypto.Symmetric.Feistel.Keys;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.Core.Functions;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.Core.Keys;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches.EncryptionData;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric.EncryptionData;
+using PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric.Keys;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.EncryptionData;
 using PhlegmaticOne.Crypto.Symmetric.Gamma.KeyGenerators;
 using PhlegmaticOne.Crypto.Symmetric.Polynomial.EncryptionData;
@@ -37,7 +40,8 @@ var algorithmsCollection = new List<ICryptoAlgorithm>
     new PolynomialAlgorithm(),
     new CardanoGridAlgorithm(),
     new SymmetricFeistelAlgorithm(),
-    new RsaAlgorithm()
+    new RsaAlgorithm(),
+    new FourBranchesFeistelAlgorithm()
 };
 
 var algorithmsExecutor = new ConfiguringAlgorithmsCryptoAlgorithmsExecutor(algorithmsCollection);
@@ -92,14 +96,10 @@ var algorithmDataFactoriesConfiguration = new AlgorithmsExecutingConfigurationBu
     }).RegisterAlgorithm<CardanoGridAlgorithm>()
     .WithAlgorithmDataFactory(() =>
     {
-        var keyGenerator = new RandomInitialKeyGenerator();
         var roundKeyGenerator = new ShiftRoundKeyGenerator();
         var function = new OrFeistelFunction();
-        var postFunction = new PBoxFunction();
-        return new FeistelAlgorithmData(keyGenerator,
-            roundKeyGenerator, function,
-            new List<IPostFeistelFunction> { postFunction },
-            32, 64);
+        return new SymmetricFeistelAlgorithmData(roundKeyGenerator, function,
+            32, 64, 2);
     }).RegisterAlgorithm<SymmetricFeistelAlgorithm>()
     .WithAlgorithmDataFactory(() =>
     {
@@ -109,6 +109,12 @@ var algorithmDataFactoriesConfiguration = new AlgorithmsExecutingConfigurationBu
         var alphabet = LetterToDigitConverter.FromAlphabetString(alphabetString);
         return new RsaEncryptionData(alphabet, primeNumbersLimitation, separatingChar);
     }).RegisterAlgorithm<RsaAlgorithm>()
+    .WithAlgorithmDataFactory(() =>
+    {
+        var roundKeyGenerator = new RandomFeistelRoundKeysGenerator();
+        var function = new OrFeistelFunction();
+        return new FourBranchesFeistelAlgorithmData(roundKeyGenerator, function, 32, 128, 4);
+    }).RegisterAlgorithm<FourBranchesFeistelAlgorithm>()
     .ToAlgorithmsDataConfiguration();
 
 
@@ -131,11 +137,11 @@ while (isExitRequested == false)
     }
 
     Console.WriteLine("\nВыберите алгоритм шифрования (введите номер) (0 - выход):");
+
     foreach (var option in algorithmExecutionHelper.ToSelectionOptions())
     {
         Console.WriteLine(option);
     }
-
 
     var input = int.Parse(Console.ReadLine()!);
 
@@ -158,3 +164,58 @@ while (isExitRequested == false)
     Console.WriteLine(decrypted.DecryptedText);
     Console.WriteLine();
 }
+
+//using System.Collections;
+//using PhlegmaticOne.Crypto.Symmetric.Feistel.Extensions;
+
+//var letterBits = new[]
+//{
+//    new []{ true, true, false, false, true, false, true, true},
+//    new []{ false, true, false, true, true, true, false, false},
+//    new []{ true, true, true, false, true, false, false, false},
+//    new []{ false, false, false, true, true, false, true, true},
+//};
+
+//var keyBits = new[]
+//{
+//    new []{ true, false, false, false, true, true, true, true},
+//    new []{ false, false, false, true, true, true, false, true},
+//    new []{ true, false, true, false, true, false, false, false},
+//    new []{ true, true, false, false, true, true, false, true}
+//};
+
+
+//var letters = letterBits.Select(x => new BitArray(x)).ToList();
+//var keys = keyBits.Select(x => new BitArray(x)).ToList();
+
+
+
+//for (var i = 0; i < 4; i++)
+//{
+//    var roundKey = keys[i];
+//    var changedBlock = letters[0].ImmutableOr(roundKey);
+//    var result = changedBlock.ImmutableXor(letters[1]);
+
+//    var copy = (letters[0].Clone() as BitArray)!;
+//    letters[0] = result;
+//    letters[1] = letters[2];
+//    letters[2] = letters[3];
+//    letters[3] = copy;
+//}
+
+
+
+//for (var i = 0; i < 4; i++)
+//{
+//    var roundKey = keys[^(i + 1)];
+//    var changedBlock = letters[3].ImmutableOr(roundKey);
+//    var result = changedBlock.ImmutableXor(letters[0]);
+
+//    var copy = (letters[3].Clone() as BitArray)!;
+//    letters[3] = letters[2];
+//    letters[2] = letters[1];
+//    letters[1] = result;
+//    letters[0] = copy;
+//}
+
+

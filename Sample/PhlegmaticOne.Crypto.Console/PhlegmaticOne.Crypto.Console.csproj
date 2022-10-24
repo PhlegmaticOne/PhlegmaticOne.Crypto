@@ -8,14 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Asymmetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj" />
-    <ProjectReference Include="..\..\src\PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj" />
+    <ProjectReference Include="..\..\src\Asymmetric\PhlegmaticOne.Crypto.Asymmetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj" />
+    <ProjectReference Include="..\..\src\Base\PhlegmaticOne.Crypto.Core\PhlegmaticOne.Crypto.Core.csproj" />
+    <ProjectReference Include="..\..\src\Classic\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj" />
+    <ProjectReference Include="..\..\src\Classic\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj" />
+    <ProjectReference Include="..\..\src\Execution\PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj" />
+    <ProjectReference Include="..\..\src\Symmetric\Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches\PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches.csproj" />
+    <ProjectReference Include="..\..\src\Symmetric\Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric\PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric.csproj" />
+    <ProjectReference Include="..\..\src\Symmetric\PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj" />
+    <ProjectReference Include="..\..\src\Symmetric\PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj" />
+    <ProjectReference Include="..\..\src\Symmetric\PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj" />
   </ItemGroup>
 
 </Project>

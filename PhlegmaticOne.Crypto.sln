@@ -7,31 +7,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C51BDBCC-458
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E5A3EFB5-B9F6-445E-A6E2-8EBCB2100B9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.AlgorithmsExecution", "src\PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj", "{0C54AA42-488D-4D33-8044-0FE032EEE594}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Asymmetric.RSA", "src\PhlegmaticOne.Crypto.Asymmetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj", "{0E662EB3-732F-406F-8EDB-ED7CC2E2E893}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.Core", "src\PhlegmaticOne.Crypto.ClassicCrypto.Core\PhlegmaticOne.Crypto.ClassicCrypto.Core.csproj", "{3517669A-EF32-4ECE-A8BB-8223129C3084}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography", "src\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj", "{E5211F1A-3904-48EF-BEEB-E3946D905EE7}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare", "src\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj", "{EF573CB1-E6E3-4E29-B777-D67C28D367E6}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Core", "src\PhlegmaticOne.Crypto.Core\PhlegmaticOne.Crypto.Core.csproj", "{BDA4813A-3371-4123-BE82-D61BC8885FD5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "src\PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Polynomial", "src\PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj", "{942FDF21-4966-4A80-843D-7F813F3F24DF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.CardanoGrid", "src\PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj", "{122118AF-E505-4A9C-9109-9193D1E618D5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Tests", "Tests\PhlegmaticOne.Crypto.Tests\PhlegmaticOne.Crypto.Tests.csproj", "{BB999707-CA9E-4342-8112-6BA0942C45B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{FA36ACD3-9D50-434F-877F-61C9091CFE25}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Console", "Sample\PhlegmaticOne.Crypto.Console\PhlegmaticOne.Crypto.Console.csproj", "{FC385E12-2E09-4C4B-A233-1646D082CEB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhlegmaticOne.Crypto.Symmetric.Feistel", "src\PhlegmaticOne.Crypto.Symmetric.Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.csproj", "{3A05F199-E105-4CD2-94FF-598CFF1C05BC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asymmetric", "Asymmetric", "{ECC06F4E-AB65-42F7-935E-7737EAB5EBD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classic", "Classic", "{7C5733D6-2058-4F6B-B985-AC20EEF6D12D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Symmetric", "Symmetric", "{8BAA60FF-CB56-4A0B-9B22-3829067B0B18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Execution", "Execution", "{C147ED23-15C9-42AA-B011-9356A41856D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.AlgorithmsExecution", "src\Execution\PhlegmaticOne.Crypto.AlgorithmsExecution\PhlegmaticOne.Crypto.AlgorithmsExecution.csproj", "{5274D2C0-9910-46A4-B773-E7B3FD93C2B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Asymmetric.RSA", "src\Asymmetric\PhlegmaticOne.Crypto.Asymmetric.RSA\PhlegmaticOne.Crypto.Asymmetric.RSA.csproj", "{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.Core", "src\Classic\PhlegmaticOne.Crypto.ClassicCrypto.Core\PhlegmaticOne.Crypto.ClassicCrypto.Core.csproj", "{130782E4-2F92-42B3-A462-DF571B4032C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{7746215F-49BF-47F8-A693-E31BDAF87752}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Core", "src\Base\PhlegmaticOne.Crypto.Core\PhlegmaticOne.Crypto.Core.csproj", "{8439A81C-BEA3-4AFA-BD0D-F44499993DE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography", "src\Classic\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography\PhlegmaticOne.Crypto.ClassicCrypto.DigitalCryptography.csproj", "{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare", "src\Classic\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare\PhlegmaticOne.Crypto.ClassicCrypto.PolybiusSquare.csproj", "{B80A16D7-1E56-48D3-9E0D-8523BE0D033B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feistel", "Feistel", "{798F839F-65D4-4D07-B10A-0C9A334E6D34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Feistel.Core", "src\Symmetric\Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.Core\PhlegmaticOne.Crypto.Symmetric.Feistel.Core.csproj", "{F82C32FF-5911-417B-A03E-577A1EA73E72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches", "src\Symmetric\Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches\PhlegmaticOne.Crypto.Symmetric.Feistel.FourBranches.csproj", "{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric", "src\Symmetric\Feistel\PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric\PhlegmaticOne.Crypto.Symmetric.Feistel.Symmetric.csproj", "{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Gamma", "src\Symmetric\PhlegmaticOne.Crypto.Symmetric.Gamma\PhlegmaticOne.Crypto.Symmetric.Gamma.csproj", "{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.Polynomial", "src\Symmetric\PhlegmaticOne.Crypto.Symmetric.Polynomial\PhlegmaticOne.Crypto.Symmetric.Polynomial.csproj", "{1054D6B9-2548-4396-A4A3-18FD9394A8CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhlegmaticOne.Crypto.Symmetric.CardanoGrid", "src\Symmetric\PhlegmaticOne.Crypto.Symmetry.CardanoGrid\PhlegmaticOne.Crypto.Symmetric.CardanoGrid.csproj", "{DA978099-A95A-465F-BD70-49B064F3EB5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,42 +55,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0C54AA42-488D-4D33-8044-0FE032EEE594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C54AA42-488D-4D33-8044-0FE032EEE594}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C54AA42-488D-4D33-8044-0FE032EEE594}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C54AA42-488D-4D33-8044-0FE032EEE594}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E662EB3-732F-406F-8EDB-ED7CC2E2E893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E662EB3-732F-406F-8EDB-ED7CC2E2E893}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E662EB3-732F-406F-8EDB-ED7CC2E2E893}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E662EB3-732F-406F-8EDB-ED7CC2E2E893}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3517669A-EF32-4ECE-A8BB-8223129C3084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3517669A-EF32-4ECE-A8BB-8223129C3084}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3517669A-EF32-4ECE-A8BB-8223129C3084}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3517669A-EF32-4ECE-A8BB-8223129C3084}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5211F1A-3904-48EF-BEEB-E3946D905EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5211F1A-3904-48EF-BEEB-E3946D905EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5211F1A-3904-48EF-BEEB-E3946D905EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5211F1A-3904-48EF-BEEB-E3946D905EE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF573CB1-E6E3-4E29-B777-D67C28D367E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF573CB1-E6E3-4E29-B777-D67C28D367E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF573CB1-E6E3-4E29-B777-D67C28D367E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF573CB1-E6E3-4E29-B777-D67C28D367E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDA4813A-3371-4123-BE82-D61BC8885FD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDA4813A-3371-4123-BE82-D61BC8885FD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDA4813A-3371-4123-BE82-D61BC8885FD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDA4813A-3371-4123-BE82-D61BC8885FD5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{942FDF21-4966-4A80-843D-7F813F3F24DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{942FDF21-4966-4A80-843D-7F813F3F24DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{942FDF21-4966-4A80-843D-7F813F3F24DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{942FDF21-4966-4A80-843D-7F813F3F24DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{122118AF-E505-4A9C-9109-9193D1E618D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{122118AF-E505-4A9C-9109-9193D1E618D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{122118AF-E505-4A9C-9109-9193D1E618D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{122118AF-E505-4A9C-9109-9193D1E618D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB999707-CA9E-4342-8112-6BA0942C45B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB999707-CA9E-4342-8112-6BA0942C45B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB999707-CA9E-4342-8112-6BA0942C45B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,27 +63,79 @@ Global
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A05F199-E105-4CD2-94FF-598CFF1C05BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5274D2C0-9910-46A4-B773-E7B3FD93C2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5274D2C0-9910-46A4-B773-E7B3FD93C2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5274D2C0-9910-46A4-B773-E7B3FD93C2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5274D2C0-9910-46A4-B773-E7B3FD93C2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130782E4-2F92-42B3-A462-DF571B4032C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130782E4-2F92-42B3-A462-DF571B4032C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130782E4-2F92-42B3-A462-DF571B4032C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130782E4-2F92-42B3-A462-DF571B4032C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8439A81C-BEA3-4AFA-BD0D-F44499993DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8439A81C-BEA3-4AFA-BD0D-F44499993DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8439A81C-BEA3-4AFA-BD0D-F44499993DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8439A81C-BEA3-4AFA-BD0D-F44499993DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80A16D7-1E56-48D3-9E0D-8523BE0D033B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80A16D7-1E56-48D3-9E0D-8523BE0D033B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80A16D7-1E56-48D3-9E0D-8523BE0D033B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80A16D7-1E56-48D3-9E0D-8523BE0D033B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82C32FF-5911-417B-A03E-577A1EA73E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82C32FF-5911-417B-A03E-577A1EA73E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82C32FF-5911-417B-A03E-577A1EA73E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82C32FF-5911-417B-A03E-577A1EA73E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1054D6B9-2548-4396-A4A3-18FD9394A8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054D6B9-2548-4396-A4A3-18FD9394A8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054D6B9-2548-4396-A4A3-18FD9394A8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054D6B9-2548-4396-A4A3-18FD9394A8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA978099-A95A-465F-BD70-49B064F3EB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA978099-A95A-465F-BD70-49B064F3EB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA978099-A95A-465F-BD70-49B064F3EB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA978099-A95A-465F-BD70-49B064F3EB5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0C54AA42-488D-4D33-8044-0FE032EEE594} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{0E662EB3-732F-406F-8EDB-ED7CC2E2E893} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{3517669A-EF32-4ECE-A8BB-8223129C3084} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{E5211F1A-3904-48EF-BEEB-E3946D905EE7} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{EF573CB1-E6E3-4E29-B777-D67C28D367E6} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{BDA4813A-3371-4123-BE82-D61BC8885FD5} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{5805AEFB-E19C-4D1F-8BEF-6D20AFF0DCB8} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{942FDF21-4966-4A80-843D-7F813F3F24DF} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
-		{122118AF-E505-4A9C-9109-9193D1E618D5} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
 		{BB999707-CA9E-4342-8112-6BA0942C45B1} = {E5A3EFB5-B9F6-445E-A6E2-8EBCB2100B9F}
 		{FC385E12-2E09-4C4B-A233-1646D082CEB6} = {FA36ACD3-9D50-434F-877F-61C9091CFE25}
-		{3A05F199-E105-4CD2-94FF-598CFF1C05BC} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{ECC06F4E-AB65-42F7-935E-7737EAB5EBD3} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{7C5733D6-2058-4F6B-B985-AC20EEF6D12D} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{8BAA60FF-CB56-4A0B-9B22-3829067B0B18} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{C147ED23-15C9-42AA-B011-9356A41856D5} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{5274D2C0-9910-46A4-B773-E7B3FD93C2B8} = {C147ED23-15C9-42AA-B011-9356A41856D5}
+		{4AF39A35-ADB8-487F-99BD-C9CB4C87ADA6} = {ECC06F4E-AB65-42F7-935E-7737EAB5EBD3}
+		{130782E4-2F92-42B3-A462-DF571B4032C4} = {7C5733D6-2058-4F6B-B985-AC20EEF6D12D}
+		{7746215F-49BF-47F8-A693-E31BDAF87752} = {C51BDBCC-4584-4FD0-88BD-33782811524A}
+		{8439A81C-BEA3-4AFA-BD0D-F44499993DE6} = {7746215F-49BF-47F8-A693-E31BDAF87752}
+		{3C3ABE83-7922-4BB3-BBA3-A8C9FAAE472F} = {7C5733D6-2058-4F6B-B985-AC20EEF6D12D}
+		{B80A16D7-1E56-48D3-9E0D-8523BE0D033B} = {7C5733D6-2058-4F6B-B985-AC20EEF6D12D}
+		{798F839F-65D4-4D07-B10A-0C9A334E6D34} = {8BAA60FF-CB56-4A0B-9B22-3829067B0B18}
+		{F82C32FF-5911-417B-A03E-577A1EA73E72} = {798F839F-65D4-4D07-B10A-0C9A334E6D34}
+		{6871CB4F-77D7-4DAC-B4A3-C8C4487B7F0F} = {798F839F-65D4-4D07-B10A-0C9A334E6D34}
+		{21A71EF3-86D6-4D7B-91F0-BDB63F0CE812} = {798F839F-65D4-4D07-B10A-0C9A334E6D34}
+		{F81A9E0F-1B1C-45BE-95AF-210D1AB7F3CE} = {8BAA60FF-CB56-4A0B-9B22-3829067B0B18}
+		{1054D6B9-2548-4396-A4A3-18FD9394A8CD} = {8BAA60FF-CB56-4A0B-9B22-3829067B0B18}
+		{DA978099-A95A-465F-BD70-49B064F3EB5E} = {8BAA60FF-CB56-4A0B-9B22-3829067B0B18}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C0908BD4-1269-4628-8238-4B210AAEE632}
